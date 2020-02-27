@@ -68,11 +68,19 @@ class ClassroomShape(models.Model):
     def __str__(self):
         return "{}".format(self.type)
 
+
+class ClassModelManager(models.Manager):
+    #techer_name like
+    def filter_by_teachers(self, teacher_name):
+        return Class.manager.filter(teacher__teacher_name__icontains=teacher_name)
+
 class Class(models.Model):
     room = models.ForeignKey("Classroom", on_delete=models.CASCADE)
     subject = models.ForeignKey("Subject", on_delete=models.CASCADE)
     teacher = models.ForeignKey("Teacher", on_delete=models.CASCADE)
     students = models.ManyToManyField("Student")
+
+    manager = ClassModelManager()
 
     def __str__(self):
         return "Room {} occupied by {} for {}".format(self.room.shape, self.teacher.teacher_name, self.subject.subject_name)
