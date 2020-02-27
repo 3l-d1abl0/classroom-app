@@ -1,9 +1,11 @@
 {% extends 'classroomapp/base.html' %} 
 {% block content %} 
-<ul class="list-group">
-    <a href="/classroom/class_preview" class="list-group-item list-group-item-action">Classroom Preview</a>
-    <a href="#" class="list-group-item list-group-item-action">Get student List attending Teacher's Class</a>
-    <a href="#" class="list-group-item list-group-item-action">Student search by teacher earning</a>
-    <a href="#" class="list-group-item list-group-item-action">Get Total</a>
-</ul>
+<div class="col-md-6 m-auto">
+    <ul class="list-group">
+        <a href="/classroom/class_preview" class="list-group-item list-group-item-action">Classroom Preview</a>
+        <a href="/classroom/teacher_search" class="list-group-item list-group-item-action">Get student List attending Teacher's Class</a>
+        <a href="#" class="list-group-item list-group-item-action">Student search by teacher earning</a>
+        <a href="#" class="list-group-item list-group-item-action">Get Total</a>
+    </ul>
+</div>
 {% endblock %}
