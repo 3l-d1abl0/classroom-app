@@ -58,13 +58,15 @@ class Classroom(models.Model):
     shape = models.ForeignKey("ClassroomShape", null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.shape
+        return "{}".format(self.shape)
+
 
 class ClassroomShape(models.Model):
     type = models.CharField(max_length=15)
+    count = models.IntegerField(default=1)
 
     def __str__(self):
-        return self.type
+        return "{}".format(self.type)
 
 class Class(models.Model):
     room = models.ForeignKey("Classroom", on_delete=models.CASCADE)
@@ -73,4 +75,4 @@ class Class(models.Model):
     students = models.ManyToManyField("Student")
 
     def __str__(self):
-        return "Room {} occupied by {} for {}".format(self.room.shape, self.teacher.full_name, self.subject.name)
+        return "Room {} occupied by {} for {}".format(self.room.shape, self.teacher.teacher_name, self.subject.subject_name)
