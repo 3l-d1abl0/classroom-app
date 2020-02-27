@@ -13,4 +13,5 @@ def index(request):
 def class_preview(request):
     class_list = Class.objects.all()
     response = {"class_list": class_list, "index": False, "page": "preview"}
+    print(response)
     return render(request, "classroomapp/class_preview.html", response)
