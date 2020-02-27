@@ -6,4 +6,11 @@ from .models import Teacher, Subject, Chapter, Student, PointOfContact, Classroo
 
 
 def index(request):
-    return render(request, 'classroomapp/index.html')
+    return render(request, 'classroomapp/index.html', {"index": True})
+
+
+
+def class_preview(request):
+    class_list = Class.objects.all()
+    response = {"class_list": class_list, "index": False, "page": "preview"}
+    return render(request, "classroomapp/class_preview.html", response)
