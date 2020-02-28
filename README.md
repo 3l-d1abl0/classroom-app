@@ -24,7 +24,7 @@ classroom-docker/
 Get in the Project Folder
 
 ```sh
-$ cd classroom-docker
+$ cd classroom-app
 $ sudo docker-compose up --build
 ```
 
@@ -32,7 +32,7 @@ $ sudo docker-compose up --build
 
 Create a Virtual environment and activate it
 ```sh
-$ cd classroom-docker
+$ cd classroom-app
 $ virtualenv -p /usr/bin/python3 newenv
 $ source newenv/bin/activate
 ```
